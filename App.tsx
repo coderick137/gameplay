@@ -6,6 +6,7 @@ import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhan
 import { Singin } from './src/screens/Singin';
 import * as SplashScree from 'expo-splash-screen';
 import { StatusBar, View } from 'react-native';
+import { Background } from './src/components/Background';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -33,19 +34,21 @@ export default function App() {
   }
 
   return (
-    <View
-      style={{ flex: 1 }}
-      onLayout={onLayoutRootView}
-    >
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
-      {
-        fontsLoaded ? <Singin /> : null
-      }
-    </View>
+    <Background>
+      <View
+        style={{ flex: 1 }}
+        onLayout={onLayoutRootView}
+      >
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+        />
+        {
+          fontsLoaded ? <Singin /> : null
+        }
+      </View>
+    </Background>
   );
 }
 
