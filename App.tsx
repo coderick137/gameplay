@@ -7,6 +7,7 @@ import { Singin } from './src/screens/Singin';
 import * as SplashScree from 'expo-splash-screen';
 import { StatusBar, View } from 'react-native';
 import { Background } from './src/components/Background';
+import { Home } from './src/screens/Home';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -45,7 +46,7 @@ export default function App() {
           translucent
         />
         {
-          fontsLoaded ? <Singin /> : null
+          fontsLoaded ? <Home /> : null
         }
       </View>
     </Background>
