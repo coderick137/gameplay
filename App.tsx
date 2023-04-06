@@ -4,8 +4,15 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* adiciona um emoji aqui */}
+      <Text>
+        code_rick 🚀
+      </Text>
+      <StatusBar
+        style='auto'
+        backgroundColor='transparent'
+        translucent
+      />
     </View>
   );
 }
@@ -13,7 +20,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff222',
     alignItems: 'center',
     justifyContent: 'center',
   },
