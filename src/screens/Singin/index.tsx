@@ -9,11 +9,6 @@ export function Singin() {
 
   return (
     <View style={styles.container}>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
       <Image
         source={IllustrationImg}
         style={styles.image}
