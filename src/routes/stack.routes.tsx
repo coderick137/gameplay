@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from '../screens/Home';
 import { Singin } from '../screens/Singin';
 
+import { theme } from '../global/styles/theme';
+
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function StackRoutes() {
@@ -11,7 +13,7 @@ export function StackRoutes() {
       screenOptions={{
         headerShown: false,
         contentStyle: {
-          backgroundColor: 'transparent'
+          backgroundColor: theme.colors.secondary100
         }
       }}
     >

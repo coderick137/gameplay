@@ -7,6 +7,7 @@ import { useState } from "react";
 import { ListHeader } from "../../components/ListHeader";
 import { Appointments } from "../../components/Appointments/inde";
 import { theme } from "../../global/styles/theme";
+import { Background } from "../../components/Background";
 
 
 
@@ -45,7 +46,7 @@ export function Home() {
   }
 
   return (
-    <View>
+    <Background>
       <View style={styles.header}>
         <Profile />
         <ButtonAdd />
@@ -72,15 +73,16 @@ export function Home() {
           style={styles.matches}
           showsVerticalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{
-            width: '80%',
+            width: '78%',
             height: 1,
             backgroundColor: theme.colors.secondary40,
-            marginVertical: 21,
+            marginTop: 5,
+            marginVertical: 31,
             alignSelf: 'flex-end'
           }} />}
         />
 
       </View>
-    </View>
+    </Background>
   )
 }
