@@ -1,21 +1,22 @@
-import { Background } from "../../components/Background";
-import { Header } from "../../components/Header";
+import { useState } from "react";
 
 import { RectButton } from "react-native-gesture-handler";
+import { Feather } from "@expo/vector-icons";
+import { KeyboardAvoidingView, Platform, ScrollView, Text, View } from "react-native";
 
 import { theme } from "../../global/styles/theme";
-import { KeyboardAvoidingView, Platform, ScrollView, Text, View } from "react-native";
-import { styles } from "./style";
 import { CategorySelect } from "../../components/CategorySelect";
-import { Feather } from "@expo/vector-icons";
-import { useState } from "react";
+import { Background } from "../../components/Background";
+import { Header } from "../../components/Header";
 import { GuildIcon } from "../../components/GuildIcon";
 import { SmallInput } from "../../components/SmallInput";
 import { TextArea } from "../../components/TextArea";
 import { Button } from "../../components/Button";
 import { ModalView } from "../../components/ModalView";
-import { Guilds } from "../Guilds";
 import { GuildProps } from "../../components/Guild";
+
+import { styles } from "./style";
+import { Guilds } from "../Guilds";
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState('');
@@ -26,9 +27,17 @@ export function AppointmentCreate() {
     setOpenGuildsModal(true);
   }
 
+  function handleCloseGuilds() {
+    setOpenGuildsModal(false);
+  }
+
   function handleGuildSelect(guidSelected: GuildProps) {
     setGuild(guidSelected);
     setOpenGuildsModal(false);
+  }
+
+  function handleCategorySelect(categoryId: string) {
+    setCategory(categoryId);
   }
 
   return (
@@ -36,8 +45,8 @@ export function AppointmentCreate() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <ScrollView>
-        <Background>
+      <Background>
+        <ScrollView>
           <Header
             title="Agendar partida"
           />
@@ -50,7 +59,7 @@ export function AppointmentCreate() {
           </Text>
           <CategorySelect
             hasCheckBox
-            setCategory={setCategory}
+            setCategory={handleCategorySelect}
             categorySelected={category}
           />
 
@@ -127,10 +136,11 @@ export function AppointmentCreate() {
               />
             </View>
           </View>
-        </Background>
-      </ScrollView>
+        </ScrollView>
+      </Background>
       <ModalView
         visible={openGuildsModal}
+        closeModal={handleCloseGuilds}
       >
         <Guilds
           handleGuildSelect={handleGuildSelect}

@@ -17,6 +17,5 @@ export const styles = StyleSheet.create({
     borderRadius: 2,
     alignSelf: 'center',
     marginTop: 13,
-    marginBottom: 103,
   },
 });
