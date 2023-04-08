@@ -8,11 +8,13 @@ import { ListHeader } from "../../components/ListHeader";
 import { Appointments } from "../../components/Appointments/inde";
 import { theme } from "../../global/styles/theme";
 import { Background } from "../../components/Background";
+import { useNavigation } from "@react-navigation/native";
 
 
 
 export function Home() {
   const [category, setCategory] = useState('');
+  const navigation = useNavigation();
 
   const appointments = [
     {
@@ -45,6 +47,10 @@ export function Home() {
     categoryId === category ? setCategory('') : setCategory(categoryId);
   }
 
+  function handleAppointmentDetails() {
+    navigation.navigate('AppointmentDetails' as never);
+  }
+
   return (
     <Background>
       <View style={styles.header}>
@@ -68,6 +74,7 @@ export function Home() {
           renderItem={({ item }) => (
             <Appointments
               data={item}
+              onPress={handleAppointmentDetails}
             />
           )}
           style={styles.matches}

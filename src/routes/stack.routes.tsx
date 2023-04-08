@@ -4,6 +4,7 @@ import { Home } from '../screens/Home';
 import { Singin } from '../screens/Singin';
 
 import { theme } from '../global/styles/theme';
+import { AppointmentDetails } from '../screens/AppointmentDetails';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -24,6 +25,11 @@ export function StackRoutes() {
       <Screen
         name="Home"
         component={Home}
+      />
+
+      <Screen
+        name="AppointmentDetails"
+        component={AppointmentDetails}
       />
     </Navigator>
   );
