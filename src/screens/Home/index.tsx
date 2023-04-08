@@ -9,6 +9,7 @@ import { Appointments } from "../../components/Appointments/inde";
 import { theme } from "../../global/styles/theme";
 import { Background } from "../../components/Background";
 import { useNavigation } from "@react-navigation/native";
+import { ListDivider } from "../../components/ListDivider";
 
 
 
@@ -77,16 +78,9 @@ export function Home() {
               onPress={handleAppointmentDetails}
             />
           )}
+          ItemSeparatorComponent={() => <ListDivider />}
           style={styles.matches}
           showsVerticalScrollIndicator={false}
-          ItemSeparatorComponent={() => <View style={{
-            width: '78%',
-            height: 1,
-            backgroundColor: theme.colors.secondary40,
-            marginTop: 5,
-            marginVertical: 31,
-            alignSelf: 'flex-end'
-          }} />}
         />
 
       </View>
