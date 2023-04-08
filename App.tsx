@@ -7,6 +7,7 @@ import * as SplashScree from 'expo-splash-screen';
 import { StatusBar, View } from 'react-native';
 import { Background } from './src/components/Background';
 import Routes from './src/routes';
+import { AuthProvider } from './src/hooks/auth';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -35,18 +36,20 @@ export default function App() {
 
   return (
     <Background>
-      <View
-        style={{ flex: 1 }}
-        onLayout={onLayoutRootView}
-      >
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor="transparent"
-          translucent
-        />
-        <Routes />
-      </View>
-    </Background>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <AuthProvider>
+        <View
+          style={{ flex: 1 }}
+          onLayout={onLayoutRootView}
+        >
+          <Routes />
+        </View>
+      </AuthProvider>
+    </Background >
   );
 }
 
