@@ -2,7 +2,6 @@ import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
 
 import IllustrationImg from "../../assets/illustration.png";
-import { StatusBar } from "react-native";
 import { ButtonIcon } from "../../components/ButtonIcon";
 import { useNavigation } from "@react-navigation/native";
 

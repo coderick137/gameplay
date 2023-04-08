@@ -1,4 +1,4 @@
-import { ScrollView, View, Text } from "react-native";
+import { ScrollView } from "react-native";
 import { styles } from "./styles";
 
 import { categories } from "../../utils/categories";
